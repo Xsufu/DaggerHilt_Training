@@ -1,7 +1,11 @@
 package com.example.daggerhilttraining
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import com.example.daggerhilttraining.databinding.ActivityMainBinding
+import com.example.daggerhilttraining.frags.Activity2
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -14,7 +18,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        wiFiManager.connect()
-        wiFiManager.sendMessage()
+        Log.d("MyLog", "MainActivity instance id: $wiFiManager")
+
+        startActivity(Intent(this, Activity2::class.java))
     }
 }
