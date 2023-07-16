@@ -1,9 +1,10 @@
 package com.example.daggerhilttraining
 
 import android.util.Log
+import javax.inject.Inject
 
 // Класс WiFiManager зависит от WiFiSettings
-class WiFiManager(private val settings: WiFiSettings) {
+class WiFiManager @Inject constructor(private val settings: WiFiSettings) {
     fun connect() {
         settings.openConnection()
     }
@@ -13,7 +14,7 @@ class WiFiManager(private val settings: WiFiSettings) {
     }
 }
 
-class WiFiSettings {
+class WiFiSettings @Inject constructor() {
     fun openConnection() {
         Log.d("MyLog", "Connection opened")
     }
