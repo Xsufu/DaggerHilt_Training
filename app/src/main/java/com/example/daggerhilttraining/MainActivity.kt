@@ -14,11 +14,15 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var wiFiManager: WiFiManager
 
+    @Inject
+    lateinit var thirdPartyClass: ThirdPartyClass
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         Log.d("MyLog", "MainActivity instance id: $wiFiManager")
+        Log.d("MyLog", "MainActivity ThirdPartyClass id: $thirdPartyClass")
 
         startActivity(Intent(this, Activity2::class.java))
     }

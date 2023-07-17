@@ -10,6 +10,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.daggerhilttraining.R
+import com.example.daggerhilttraining.ThirdPartyClass
 import com.example.daggerhilttraining.WiFiManager
 import com.example.daggerhilttraining.databinding.Activity2Binding
 import dagger.hilt.android.AndroidEntryPoint
@@ -23,6 +24,9 @@ class Activity2 : AppCompatActivity() {
 
     @Inject
     lateinit var wiFiManager: WiFiManager
+
+    @Inject
+    lateinit var thirdPartyClass: ThirdPartyClass
 
     override fun onCreate(savedInstanceState: Bundle?) {
         WindowCompat.setDecorFitsSystemWindows(window, false)
@@ -44,6 +48,7 @@ class Activity2 : AppCompatActivity() {
         }
 
         Log.d("MyLog", "Activity2 instance id: $wiFiManager")
+        Log.d("MyLog", "Activity2 ThirdPartyClass id: $thirdPartyClass")
     }
 
     override fun onSupportNavigateUp(): Boolean {

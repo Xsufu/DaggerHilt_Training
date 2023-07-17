@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.daggerhilttraining.R
+import com.example.daggerhilttraining.ThirdPartyClass
 import com.example.daggerhilttraining.WiFiManager
 import com.example.daggerhilttraining.databinding.FragmentFirstBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -23,6 +24,9 @@ class FirstFragment : Fragment() {
 
     @Inject
     lateinit var wiFiManager: WiFiManager
+
+    @Inject
+    lateinit var thirdPartyClass: ThirdPartyClass
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -46,6 +50,7 @@ class FirstFragment : Fragment() {
         }
 
         Log.d("MyLog", "FirstFragment instance id: $wiFiManager")
+        Log.d("MyLog", "FirstFragment ThirdPartyClass id: $thirdPartyClass")
     }
 
     override fun onDestroyView() {
